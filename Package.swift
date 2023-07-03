@@ -4,20 +4,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "Sources",
+    name: "Extras",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
+//        .library(
+//            name: "Sources",
+//            targets: ["Sources"]),
         .library(
-            name: "Sources",
-            targets: ["Sources"]),
+            name:"WebRTCExtras",
+            targets: ["WebRTCExtras"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Sources"),
-        .testTarget(
-            name: "SourcesTests",
-            dependencies: ["Sources"]),
+//        .target(
+//            name: "Sources",
+//            path: "Sources/Sources"),
+        .binaryTarget(
+            name: "WebRTCExtras",
+            path: "Sources/WebRTCExtras.xcframework"
+        ),
+//        .testTarget(
+//            name: "SourcesTests",
+//            dependencies: ["Sources"]),
     ]
 )
